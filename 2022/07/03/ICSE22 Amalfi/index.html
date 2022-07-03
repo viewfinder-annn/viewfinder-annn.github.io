@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>ICSE22 Practical Automated Detection of Malicious npm Packages - viewfinder-annn</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="viewfinder-annn"><meta name="msapplication-TileImage" content="/img/viewfinder.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="viewfinder-annn"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Introduction截至2021年9月，npm包管理站点拥有超过1.7百万第三方包，同时每周开发者会上传超过10万个包版本，这其中包括了新package和已有package的新版本。 发布新包&amp;#x2F;新版本是相同的流程，任何一个得到验证的npm站点用户上传包之后自然而然的成为该包的maintainer，永和可以通过对包目录上传新tarball文件来随时上传新版本。maintainer必须保证在包发布"><meta property="og:type" content="blog"><meta property="og:title" content="ICSE22 Practical Automated Detection of Malicious npm Packages"><meta property="og:url" content="http://example.com/2022/07/03/ICSE22%20Amalfi/"><meta property="og:site_name" content="viewfinder-annn"><meta property="og:description" content="Introduction截至2021年9月，npm包管理站点拥有超过1.7百万第三方包，同时每周开发者会上传超过10万个包版本，这其中包括了新package和已有package的新版本。 发布新包&amp;#x2F;新版本是相同的流程，任何一个得到验证的npm站点用户上传包之后自然而然的成为该包的maintainer，永和可以通过对包目录上传新tarball文件来随时上传新版本。maintainer必须保证在包发布"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702124223607.png"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702133539716.png"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702134345570.png"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702140442016.png"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702142815873.png"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702142826693.png"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702143452245.png"><meta property="article:published_time" content="2022-07-03T07:27:52.094Z"><meta property="article:modified_time" content="2022-07-03T07:30:38.129Z"><meta property="article:author" content="annn"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702124223607.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/03/ICSE22%20Amalfi/"},"headline":"ICSE22 Practical Automated Detection of Malicious npm Packages","image":["https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702124223607.png","https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702133539716.png","https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702134345570.png","https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702140442016.png","https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702142815873.png","https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702142826693.png","https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702143452245.png"],"datePublished":"2022-07-03T07:27:52.094Z","dateModified":"2022-07-03T07:30:38.129Z","author":{"@type":"Person","name":"annn"},"publisher":{"@type":"Organization","name":"viewfinder-annn","logo":{"@type":"ImageObject","url":{"text":"viewfinder-annn"}}},"description":"Introduction截至2021年9月，npm包管理站点拥有超过1.7百万第三方包，同时每周开发者会上传超过10万个包版本，这其中包括了新package和已有package的新版本。 发布新包&#x2F;新版本是相同的流程，任何一个得到验证的npm站点用户上传包之后自然而然的成为该包的maintainer，永和可以通过对包目录上传新tarball文件来随时上传新版本。maintainer必须保证在包发布"}</script><link rel="canonical" href="http://example.com/2022/07/03/ICSE22%20Amalfi/"><link rel="icon" href="/img/viewfinder.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">viewfinder-annn</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub Page" href="https://github.com/viewfinder-annn"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-07-03T07:27:52.094Z" title="2022/7/3 下午3:27:52">2022-07-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-07-03T07:30:38.129Z" title="2022/7/3 下午3:30:38">2022-07-03</time></span><span class="level-item"><a class="link-muted" href="/categories/paper/">paper</a></span><span class="level-item">26 minutes read (About 3884 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">ICSE22 Practical Automated Detection of Malicious npm Packages</h1><div class="content"><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>截至2021年9月，npm包管理站点拥有超过1.7百万第三方包，同时每周开发者会上传超过10万个包版本，这其中包括了新package和已有package的新版本。</p>
+<p>发布新包/新版本是相同的流程，任何一个得到验证的npm站点用户上传包之后自然而然的成为该包的maintainer，永和可以通过对包目录上传新tarball文件来随时上传新版本。maintainer必须保证在包发布之前进行一定的构建(build)工作。包管理站点仅仅保存这些tarball而对包里的内容大部分是不可知的。npm过人的欢迎程度使得其被攻击者利用来发布有害package，进行有害的活动。(比如eslint-scope和event-stream等)</p>
+<p>想要从<strong>根本上</strong>解决包管理站点投毒问题需要对npm站点本身做出巨大的改变，比如更加严格的包上传机制，或者对第三方包实现访问控制来降低投毒包的伤害。</p>
+<p>作者团队在文中的目标更小，不需要对npm站点做出任何变化，实现了尽可能快的包检测工具，并把检测到的毒包报告给了审查人员来进行毒包移除。</p>
+<p>对于这种工具作者团队给出了三个关键词：<code>automated、efficient、accurate</code>，并基于三种目标提出了Amalfi模型，其包含以下三种成分：</p>
+<ul>
+<li>machine-learning classifiers trained on labelled examples of malicious and benign packages</li>
+<li>a reproducer that rebuilds a package from source and compares the result with the version published in the registry</li>
+<li>a clone detector that finds (near-)verbatim copies of known malicious packages</li>
+</ul>
+<p>对于分类器，作者团队使用了三种不同的策略：decision trees, Naive Bayesian classifiers, and one-class SVMs，同时使用再构建技术在一定程度上减少false positive，使用逐字符(a simple clone detector that hashes the contents of a package (minus the package name and version, which are always unique))的克隆检测来减少false negative。</p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702124223607.png" alt="image-20220702124223607"></p>
+<p>作者团队对于Amalfi开展了两类实验，一类实验基于实时大量包数据，最终在一周新上传的共96287个包中检测出95个有害包；另一类实验选择MALOSS模型检测出的数据进行交叉验证观测了Amalfi的precision和recall。</p>
+<p>论文贡献：</p>
+<ul>
+<li>实现了Amalfi，并在实验过程中检测出了95个有害包，在三种分类策略的选择中决策树占优，但其他方法也有其贡献。</li>
+<li>Amalfi效率不俗，只需要数秒内就能够提取一个packge的feature并运行分类器，同时retraining成本低廉，可以不断地对模型进行优化</li>
+<li>假阳性率一开始很高，但在分类器训练更多数据之后，假阳性率有效降低了。同时交叉验证中说明决策树能够达到40%的recall，说明假阴性率是可以接受的。</li>
+</ul>
+<p>While the building blocks we use have been proposed before, the novelty of our approach lies in their combination, and a more thorough exploration and evaluation of the design space.</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/githubnext/amalfi-artifact">githubnext/amalfi-artifact</a></p>
+<hr>
+<h3 id="Our-Approach"><a href="#Our-Approach" class="headerlink" title="Our Approach"></a>Our Approach</h3><h4 id="Feature-Set"><a href="#Feature-Set" class="headerlink" title="Feature Set"></a>Feature Set</h4><p>Amalfi的分类器基于11个feature建立：9个单版本feature和2个跨版本feature</p>
+<ul>
+<li><p>单版本feature：</p>
+<ol>
+<li><p>访问个人信息的行为(personally-identifying information，比如信用卡号、密码、cookies等)</p>
+</li>
+<li><p>访问特定的系统资源</p>
+<p>a.    访问文件系统：读写文件</p>
+<p>b.    新进程创建</p>
+<p>c.    网络资源访问：发送/接收数据</p>
+</li>
+<li><p>使用特定API</p>
+<p>a.    加密解密API</p>
+<p>b.    数据编码API(比如encodeURIComponent等)</p>
+<p>c.    动态代码生成和执行API(比如eval、Function等)</p>
+</li>
+<li><p>使用包安装脚本</p>
+</li>
+<li><p>包含极简化代码(minified code，从JavaScript源代码中删除所有不必要的字符而不改变其功能的过程。这包括删除空格、注释和分号，以及使用较短的变量名和函数)，或者二进制可执行文件</p>
+</li>
+</ol>
+</li>
+<li><p>跨版本feature</p>
+<ol>
+<li>和上一个版本的时间跨度太短或者太长(可能是账号盗取)<ul>
+<li>对于new package，作者团队把和上一个版本的时间跨度置为0来不遗漏feature</li>
+</ul>
+</li>
+<li>和上一个版本的语义化版本号差距与代码内容不符合(major, minor, patch, build, or pre-release)</li>
+</ol>
+</li>
+</ul>
+<h4 id="Feature-Extraction"><a href="#Feature-Extraction" class="headerlink" title="Feature Extraction"></a>Feature Extraction</h4><p>Amalfi使用了<a target="_blank" rel="noopener" href="https://tree-sitter.github.io/tree-sitter/">tree-sitter</a>来提取代码的AST从而寻找对应feature的句法结构，比如包含着password的字符常量、对fs的import、eval和Function的调用等。</p>
+<p>为了检查包安装脚本，Amalf检查<code>package.json</code>来查找preinstall、install、postinstall的定义和内容。</p>
+<p>对于minified code和binary，Amalfi计算了包中所有文件的香农熵，通过所有文件的平均值和标准差进行检查。</p>
+<p>对于的跨版本的feature，版本时间使用了<code>npm view time</code>来提取，语义化版本号则是使用现成的语义化版本号库来检查update type，并寻找上一个版本号的包，通过单版本feature的提取来比对。</p>
+<h4 id="Classifier-training"><a href="#Classifier-training" class="headerlink" title="Classifier training"></a>Classifier training</h4><p>基础数据集：作者团队向npm站点获取了643个截至2021.07.29检测出并归档的有害包，其中63个包是无害包的有害版本。加上1147个同一天上传的正常包，一共1790个包。基础数据集使用了过采样技术(现实情形下有害包的比例要小得多)</p>
+<p>值得指出通过劫取已有包的账号来投毒会有更加大的影响，但这种攻击很少很少发生。但直接上传毒包和这种账号劫取攻击的内容和形式是相同的，所以Amalfi都能进行检测。</p>
+<p>由于imbalanced data，同时需要算法去分析哪些feature更加重要，我们选择了decision trees, Naive Bayesian classifiers, and One-class Support Vector Machines (SVMs)三种学习算法。决策时有能力解释每种feature对最终决策的影响力，同时后两种算法针对不均匀的数据集的异常检测有着很好的表现。</p>
+<ul>
+<li>classifier training：sklearn library</li>
+<li>decision tree：use information gain as the split criterion</li>
+<li>Naive Bayesian classifiers：使用Bernoulli变体，它只能处理布尔特征，所以我们省略了离散特征（熵的平均值和标准差以及更新时间），并将其他特征折叠为1，如果该特征存在，则为0</li>
+<li>SVM：选择了一个线性核，并只对良性例子进行训练，因为这个分类器的任务是检测与良性例子明显不同的离群版本。同时使用留一法(leave-one-out experiment)来决定the 𝜈 parameter of the SVM，最终得到𝜈值为0.001，说明该分类器期待从1000个包中发现一个有害包。</li>
+</ul>
+<h4 id="Reproducer-and-clone-detector"><a href="#Reproducer-and-clone-detector" class="headerlink" title="Reproducer and clone detector"></a>Reproducer and clone detector</h4><p>reproducer：是一个启发式的过程，在package信息中获取url，package version也能确定commit的git SHA。但是由于1)许多包的开发流程不规范，找不到正确的commit，2)build command也没有事先规定，3)build tools的版本也缺少信息。这使得reproducer的成功率很低，但它作为false-positive filter还是有其作用。</p>
+<p>clone detector：计算包中内容的MD5哈希值，同一系列已知有害包的哈希值比对，在计算哈希的时候省略了<code>package.json</code>文件来消除版本的影响。但克隆检测没有使用任何模糊匹配策略，导致只有逐字符的测龙才会被检测到。</p>
+<hr>
+<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><ul>
+<li><p>RQ1 Does Amalfi find malicious packages in practice? </p>
+</li>
+<li><p>RQ2 Is it accurate enough to be useful? </p>
+</li>
+<li><p>RQ3 Is training and classification fast enough to be useable?</p>
+</li>
+</ul>
+<p>为了回答三个问题，Amalfi开展了两个实验：对新包的检测验证其有效性/对已知有害包的检测验证其precision和recall</p>
+<h4 id="Experiment-1-Classifying-newly-published-packages"><a href="#Experiment-1-Classifying-newly-published-packages" class="headerlink" title="Experiment 1: Classifying newly published packages"></a>Experiment 1: Classifying newly published packages</h4><p>选择了2021.07.29到2021.08.04一周内的新包进行检测。</p>
+<p>通过三种classifier和clone detector四个检测器挑出可能的有害包，再使用reproducer来消除一定的FP。</p>
+<p>对于剩下挑出的包，两位作者进行人工审查来确定其是否有害，每个作者审查一半的包，对于一个作者发现的有害包另一个作者同样进行再审查。</p>
+<p>每天审查结束之后，把当日的数据作为训练集输入继续进行训练来提高其表现(虽然没有考虑到FN，但现实情况也无法把所有FN都摘出)。</p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702133539716.png" alt="image-20220702133539716"></p>
+<h4 id="Experiment-2-Classifying-labelled-data"><a href="#Experiment-2-Classifying-labelled-data" class="headerlink" title="Experiment 2: Classifying labelled data"></a>Experiment 2: Classifying labelled data</h4><p>作者团队使用了MALOSS检测出的npm有害包来进行验证。由于数据集过小，无法实施train-and-test方法，最终采用了10折交叉验证来评估。由于数据不均匀，作者团队使用了分层采样来保证每折的有害包/良包分布。</p>
+<p>通过剔除MALOSS中和基础数据集重叠的有害包，类似地填充了一部分良包后，得到了总共372个包的数据集，其中有着40个有害包。</p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702134345570.png" alt="image-20220702134345570"></p>
+<h4 id="RQ1-Practical-performance-on-newly-published-packages"><a href="#RQ1-Practical-performance-on-newly-published-packages" class="headerlink" title="RQ1:  Practical performance on newly published packages"></a>RQ1:  Practical performance on newly published packages</h4><p>实验一中三种分类器数据后面的加减：</p>
+<p>TP中的+：在检测出TP之后基于这些TP进行clone detect从而发现的新有害包</p>
+<p>FP中的-：在检测出FP之后，对于每个FP进行reproduce从而发现的良包</p>
+<p>实验一的发现：</p>
+<ul>
+<li>每天新发布的包数量很多，但也不均匀(比如07.29和08.01的差距，其中前者是一个周四，后者是一个周六)</li>
+<li>Amalfi能够检测出有害包，三种分类器中决策树表现最好，但其他分类器也有其贡献。最终团队发现了95个有害包(报告给npm团队后均被删除)，相比于之前检查到的643个有害包而言数量非常可观。</li>
+<li>在第一天三种分类器的FP率都很高，但后续的几天里明显降低。说明了初始数据集存在一定的缺陷，但Amalfi经过训练之后表现能够明显提升。</li>
+<li>reproducer有着很低的成功率，类似地clone detector成功率也不高，08.04的clone成功率存在异常，但这17个TP和决策树检测出的大部分重合。</li>
+</ul>
+<p>RQ1的回答：we can answer RQ1 <strong>in the affirmative</strong>: Amalfi does indeed detect malicious packages in practice. Further, since all the packages found by Amalfi and reported to npm had not been identified before, we can confidently claim that our approach complements existing solutions for malicious package detection in npm.</p>
+<h4 id="RQ2-Accuracy"><a href="#RQ2-Accuracy" class="headerlink" title="RQ2: Accuracy"></a>RQ2: Accuracy</h4><p>实验二的第一行表示对基础数据集的验证，由于SVM的𝜈值是基于该数据集，所以最终表现打了括号。</p>
+<p>第二行表示对MALOSS提取出的数据的验证。可以看到recall高于第一行，但precision更低。说明这两种指标存在着trade-off关系，同时还要注意到MALOSS团队报告给npm团队的有害包有一部分并没有被下架。</p>
+<p>针对Amalfi和MALOSS更加细致的比较无法实现，因为MALOSS的庞大pipeline，难以把基础数据集适应到MALOSS模型，同时开销过大。</p>
+<p>RQ2的回答：we can give a <strong>cautiously positive answer</strong> to RQ2: Amalfi is reasonably precise and does not produce an overwhelming number of results, making manual triaging of results by a human auditor feasible. The second experiment suggests that there may be a good number of false negatives, but at least the numbers for the decision tree look promising.</p>
+<h4 id="RQ3-Performance"><a href="#RQ3-Performance" class="headerlink" title="RQ3: Performance"></a>RQ3: Performance</h4><p>针对效率作者团队观测了以下三个指标：(1)训练分类器的时间，(2)提取单个包feature的时间，(3)分类一个包的时间</p>
+<p>训练时间结果：</p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702140442016.png" alt="image-20220702140442016"></p>
+<p>feature提取时间：By and large, feature extraction takes less than ten seconds, and for over half the packages considered it takes less than one second.</p>
+<p>分类时间： For all the classifiers, the time for prediction was less than a second.</p>
+<p>RQ3的回答：we can give a <strong>positive answer</strong> to RQ3: Amalfi is fast enough for practical use.</p>
+<h4 id="Threats-to-validity"><a href="#Threats-to-validity" class="headerlink" title="Threats to validity"></a>Threats to validity</h4><ul>
+<li>基础数据集中存在着克隆内容的有害包</li>
+<li>对于Amalfi检查出的每个包，人工审查的时间限制在了5分钟，可能漏掉TP，但FP不一定漏掉，毕竟所有上报给npm的包都被下架。</li>
+<li>没有被Amalfi检查出的包默认为良包，并不是一个完全正确的预想</li>
+</ul>
+<hr>
+<h3 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h3><p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702142815873.png" alt="image-20220702142815873"></p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702142826693.png" alt="image-20220702142826693"></p>
+<p>每一个检测出的有害包都使用了安装脚本，有一些传输了个人信息，有一些没有(可能是作为proof-of-concept的包出现)</p>
+<p>图三说明了有害包出现的feature</p>
+<p>同时我们的feature extractor没能够提取出个人信息获取的feature，但由于其他feature的存在能够检查出有害包，说明系统有其健壮性，一些没有被检测到的feature并不代表着没有作用。</p>
+<p>major update是最常见的更新，这与“有害包的注入通常和minor update相关”的直觉相违背，这也可能说明着存在更多没有检查出来的有害包。</p>
+<p>图五说明了有害包和良包的香农熵统计和时间间隔，红线代表着中位数。可以看到有害包的熵明显高于良包(4.69 vs 0.001)，同时更新时间间隔短于良包(7.02s vs 2217.18s)</p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702143452245.png" alt="image-20220702143452245"></p>
+<p>图六展示了三种分类器的表现，可以看到决策树占大头，但其他分类器也能分辨出决策树没有发现的有害包，所以三种分类器一起使用效果更好。</p>
+<p>对于feature的选择，实验一中07.29-07.31都没有涉及到cryptographic functionality，但在08.01之后，所有11种feature都有考虑到了，说明特征集没有冗余。</p>
+<p>最终团队还尝试了随机森林算法代替决策树，最终效果并不理想，同时对于SVM的布尔化配置也进行了调整，但会造成更坏的结果。</p>
+<hr>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>作者团队提出了Amalfi，一个自动检测npm有害包的工具。其基于机器学习的分类器，再构建器和克隆检测器。对于分类器采用了决策树，朴素贝叶斯分类器和单类支持向量机。其中第一种表现最好但另外两种对检测结果也有补充。</p>
+<p>未来的工作可以针对：</p>
+<ul>
+<li>更深程度的feature extraction，不再是纯句法分析，可以引入部分程序分析的工具。</li>
+<li>更加有效的clone detection</li>
+<li>如何结合不同的分类器，比如ranking系统来帮助人工审查</li>
+<li>迁移到更多的package registry</li>
+</ul>
+</div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/07/03/NDSS21%20MALOSS/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">NDSS21 Towards Measuring Supply Chain Attacks on Package Managers for Interpreted Languages</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/07/03/ICSE19%20Detecting%20Suspicious%20Package%20Updates/"><span class="level-item">ICSE19 Detecting Suspicious Package Updates</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/viewfinder.png" alt="viewfinder"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">viewfinder</p><p class="is-size-6 is-block">blogger</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Introduction"><span class="level-left"><span class="level-item">1</span><span class="level-item">Introduction</span></span></a></li><li><a class="level is-mobile" href="#Our-Approach"><span class="level-left"><span class="level-item">2</span><span class="level-item">Our Approach</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Feature-Set"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">Feature Set</span></span></a></li><li><a class="level is-mobile" href="#Feature-Extraction"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Feature Extraction</span></span></a></li><li><a class="level is-mobile" href="#Classifier-training"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">Classifier training</span></span></a></li><li><a class="level is-mobile" href="#Reproducer-and-clone-detector"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">Reproducer and clone detector</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Evaluation"><span class="level-left"><span class="level-item">3</span><span class="level-item">Evaluation</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Experiment-1-Classifying-newly-published-packages"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Experiment 1: Classifying newly published packages</span></span></a></li><li><a class="level is-mobile" href="#Experiment-2-Classifying-labelled-data"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">Experiment 2: Classifying labelled data</span></span></a></li><li><a class="level is-mobile" href="#RQ1-Practical-performance-on-newly-published-packages"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">RQ1:  Practical performance on newly published packages</span></span></a></li><li><a class="level is-mobile" href="#RQ2-Accuracy"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">RQ2: Accuracy</span></span></a></li><li><a class="level is-mobile" href="#RQ3-Performance"><span class="level-left"><span class="level-item">3.5</span><span class="level-item">RQ3: Performance</span></span></a></li><li><a class="level is-mobile" href="#Threats-to-validity"><span class="level-left"><span class="level-item">3.6</span><span class="level-item">Threats to validity</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Discussion"><span class="level-left"><span class="level-item">4</span><span class="level-item">Discussion</span></span></a></li><li><a class="level is-mobile" href="#Conclusion"><span class="level-left"><span class="level-item">5</span><span class="level-item">Conclusion</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">viewfinder-annn</a><p class="is-size-7"><span>&copy; 2022 annn</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

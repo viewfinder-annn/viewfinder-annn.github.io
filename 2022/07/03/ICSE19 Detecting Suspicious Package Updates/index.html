@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>ICSE19 Detecting Suspicious Package Updates - viewfinder-annn</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="viewfinder-annn"><meta name="msapplication-TileImage" content="/img/viewfinder.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="viewfinder-annn"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="文章很短，数据没有Amalfi有说服力，不做总结了  和Amalfi的区别： 用了k-均值聚类来进行无监督学习，Amalfi使用了监督学习  无监督学习的意思是指数据集没有所谓的标记(比如说是毒包&amp;#x2F;不是毒包)，k-means聚类通过足够多的数据集学习得到一系列聚类之后，面对新数据时，比对该点和其他聚类的距离是否超过阈值来判断该数据是否正常。   有监督学习的意思就是数据提前存在标签，就是先利用有标"><meta property="og:type" content="blog"><meta property="og:title" content="ICSE19 Detecting Suspicious Package Updates"><meta property="og:url" content="http://example.com/2022/07/03/ICSE19%20Detecting%20Suspicious%20Package%20Updates/"><meta property="og:site_name" content="viewfinder-annn"><meta property="og:description" content="文章很短，数据没有Amalfi有说服力，不做总结了  和Amalfi的区别： 用了k-均值聚类来进行无监督学习，Amalfi使用了监督学习  无监督学习的意思是指数据集没有所谓的标记(比如说是毒包&amp;#x2F;不是毒包)，k-means聚类通过足够多的数据集学习得到一系列聚类之后，面对新数据时，比对该点和其他聚类的距离是否超过阈值来判断该数据是否正常。   有监督学习的意思就是数据提前存在标签，就是先利用有标"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170133645.png"><meta property="og:image" content="https://pic4.zhimg.com/v2-8382b2f15d8b3f3f1c98104ebaeefedf_b.webp"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170233376.png"><meta property="og:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170331522.png"><meta property="article:published_time" content="2022-07-03T07:27:52.064Z"><meta property="article:modified_time" content="2022-07-03T07:37:07.650Z"><meta property="article:author" content="annn"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170133645.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/03/ICSE19%20Detecting%20Suspicious%20Package%20Updates/"},"headline":"ICSE19 Detecting Suspicious Package Updates","image":["https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170133645.png","https://pic4.zhimg.com/v2-8382b2f15d8b3f3f1c98104ebaeefedf_b.webp","https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170233376.png","https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170331522.png"],"datePublished":"2022-07-03T07:27:52.064Z","dateModified":"2022-07-03T07:37:07.650Z","author":{"@type":"Person","name":"annn"},"publisher":{"@type":"Organization","name":"viewfinder-annn","logo":{"@type":"ImageObject","url":{"text":"viewfinder-annn"}}},"description":"文章很短，数据没有Amalfi有说服力，不做总结了  和Amalfi的区别： 用了k-均值聚类来进行无监督学习，Amalfi使用了监督学习  无监督学习的意思是指数据集没有所谓的标记(比如说是毒包&#x2F;不是毒包)，k-means聚类通过足够多的数据集学习得到一系列聚类之后，面对新数据时，比对该点和其他聚类的距离是否超过阈值来判断该数据是否正常。   有监督学习的意思就是数据提前存在标签，就是先利用有标"}</script><link rel="canonical" href="http://example.com/2022/07/03/ICSE19%20Detecting%20Suspicious%20Package%20Updates/"><link rel="icon" href="/img/viewfinder.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">viewfinder-annn</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub Page" href="https://github.com/viewfinder-annn"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-07-03T07:27:52.064Z" title="2022/7/3 下午3:27:52">2022-07-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-07-03T07:37:07.650Z" title="2022/7/3 下午3:37:07">2022-07-03</time></span><span class="level-item"><a class="link-muted" href="/categories/paper/">paper</a></span><span class="level-item">5 minutes read (About 783 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">ICSE19 Detecting Suspicious Package Updates</h1><div class="content"><p>文章很短，数据没有Amalfi有说服力，不做总结了</p>
+<hr>
+<h3 id="和Amalfi的区别："><a href="#和Amalfi的区别：" class="headerlink" title="和Amalfi的区别："></a>和Amalfi的区别：</h3><ul>
+<li><p>用了k-均值聚类来进行<strong>无监督学习</strong>，Amalfi使用了监督学习</p>
+<ul>
+<li><p>无监督学习的意思是指数据集没有所谓的标记(比如说是毒包/不是毒包)，k-means聚类通过足够多的数据集学习得到一系列聚类之后，面对新数据时，比对该点和其他聚类的距离是否超过阈值来判断该数据是否正常。</p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170133645.png" alt="image-20220702170133645"></p>
+</li>
+<li><p>有监督学习的意思就是数据提前存在标签，就是先利用有标签的训练数据学习得到一个模型，然后使用这个模型对新样本进行预测。在本质上，监督学习的目标在于，构建一个由输入到输出的映射，该映射用模型来表示。</p>
+<p><img src="https://pic4.zhimg.com/v2-8382b2f15d8b3f3f1c98104ebaeefedf_b.webp" alt="动图"></p>
+</li>
+</ul>
+</li>
+<li><p>feature不同</p>
+<p>这是这篇文章的feature</p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170233376.png" alt="image-20220702170233376"></p>
+<p>和Amalfi的对比：</p>
+<p><img src="https://raw.githubusercontent.com/viewfinder-annn/pic/main/img/image-20220702170331522.png" alt="image-20220702170331522"></p>
+<p>可以看到下方的dependencies和code没有考虑到，但是Amalfi把这部分思想设计在了<strong>minified code和binary file</strong>，同时由于Amalfi和该文的监测范围不太一样，所以也没有把这两项作为feature</p>
+</li>
+<li><p>监测范围不同</p>
+<ul>
+<li>该文的监测范围在于版本间update中引入的漏洞，因为当时的问题范围就在于update时的漏洞(eslint-scope)</li>
+<li>Amalfi不止检测了版本间的update，同时还考虑的new package。</li>
+<li>对于版本间的feature，Amalfi引入了时间间隔和语义化版本号的类型</li>
+</ul>
+</li>
+<li><p>对于语义化版本的处理</p>
+<ul>
+<li>本文的模型对于不同的语义化版本升级(major.minor.patch)分别进行了聚类学习，并使用elbow method来确定每个模型的k值，分别为1，1，10</li>
+<li>Amalfi没有考虑对每个语义化升级做不同的模型，而是把版本之间的代码内容的跨度和版本号差距作为feature考虑</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="后续研究方向"><a href="#后续研究方向" class="headerlink" title="后续研究方向"></a>后续研究方向</h3><p>本文结尾指出了一系列研究方向：</p>
+<ul>
+<li>把文中模型放大到整个npm生态做评估，来展示大规模数据下的可用性</li>
+<li>考虑不同的检测模型设计，比如对每个project检测、每个开发者、或者通过package size来检测，以此来提高precision</li>
+<li>建立suspicion的解释：对于模型检测出的suspicious package，提供一定的解释来加快人工审查</li>
+<li>(对npm站点)针对每天的数据进行看板展示最可疑的包，来提高开发者的安全意识</li>
+<li>实现自动化、社交化的方案来帮助开发者发现依赖自动升级的问题</li>
+<li>对package registry提供其他的方案，以建立更加安全的package registry</li>
+</ul>
+</div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/07/03/ICSE22%20Amalfi/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">ICSE22 Practical Automated Detection of Malicious npm Packages</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/07/03/FSE21%20LastPyMile/"><span class="level-item">FSE21 LastPyMile-identifying the discrepancy between sources and packages</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/viewfinder.png" alt="viewfinder"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">viewfinder</p><p class="is-size-6 is-block">blogger</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#和Amalfi的区别："><span class="level-left"><span class="level-item">1</span><span class="level-item">和Amalfi的区别：</span></span></a></li><li><a class="level is-mobile" href="#后续研究方向"><span class="level-left"><span class="level-item">2</span><span class="level-item">后续研究方向</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">viewfinder-annn</a><p class="is-size-7"><span>&copy; 2022 annn</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
