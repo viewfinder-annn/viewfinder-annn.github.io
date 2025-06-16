@@ -1,5 +1,5 @@
-<div style="margin: 2px 0px -5px;">
-    <h2 id="publications" style="margin-bottom: 5px;">Selected Publications</h2>
+<div id="publications" style="margin: 2px 0px -5px;">
+    <h2 style="margin-bottom: 5px;">Selected Publications</h2>
     <p style="margin-top: -5px;">For a full list, please refer to my <a href="https://scholar.google.com/citations?user=r1VH6rsAAAAJ" target="_blank">Google Scholar</a>.</p>
 </div>
 

@@ -1,4 +1,4 @@
-## News
+## News {#news}
 
 - **[Jun. 2025]** thrilled to share that our paper [AnyEnhance](https://arxiv.org/abs/2501.15417), my first as lead author in the speech/audio domain, has been accepted to TASLP 2025!
 - **[Jun. 2025]** honored to be invited to give a [talk](https://giac.msup.com.cn/2025sz/course?id=18426) at the 12th GIAC全球互联网架构大会!

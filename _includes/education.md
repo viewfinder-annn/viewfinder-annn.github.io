@@ -1,4 +1,5 @@
-<h2>Education</h2>
+## Education {#education}
+
 <div style="margin-top: 1.2em;">
 
   <!-- Entry for CUHK-SZ -->
