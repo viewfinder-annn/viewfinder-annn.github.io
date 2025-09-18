@@ -34,7 +34,7 @@ main:
     notes: Accepted
 
   - title: "LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models"
-    authors: Junyan Ye*, Baichuan Zhou*, Zilong Huang*, <strong>Junan Zhang*</strong>, Tianyi Bai*, Hengrui Kang, Jun He, Honglin Lin, Zihao Wang, Tong Wu, Zhizheng Wu, Yiping Chen, Dahua Lin, Conghui He, Weijia Li (*Equal Contribution)
+    authors: Junyan Ye*, Baichuan Zhou*, Zilong Huang*, <strong>Junan Zhang*</strong>, Tianyi Bai*, Hengrui Kang, Jun He, Honglin Lin, Zihao Wang, Tong Wu, Zhizheng Wu, Yiping Chen, Dahua Lin, Conghui He, Weijia Li
     conference_short: ICLR
     conference: The Thirteenth International Conference on Learning Representations (ICLR), 2025.
     pdf: https://arxiv.org/abs/2410.09732
@@ -68,7 +68,7 @@ main:
   #   # notes: Accepted
 
   - title: "SingNet: Towards a Large-Scale, Diverse, and In-the-Wild Singing Voice Dataset"
-    authors: Yicheng Gu*, Chaoren Wang*, <strong>Junan Zhang*</strong>, Xueyao Zhang, Zihao Fang, Haorui He, Zhizheng Wu (*Equal Contribution)
+    authors: Yicheng Gu*, Chaoren Wang*, <strong>Junan Zhang*</strong>, Xueyao Zhang, Zihao Fang, Haorui He, Zhizheng Wu
     conference_short: Preprint
     conference: Arxiv Preprint, 2025.
     pdf: https://arxiv.org/abs/2505.09325
@@ -78,7 +78,7 @@ main:
     # notes: Accepted
 
   - title: "Amphion: an Open-Source Audio, Music, and Speech Generation Toolkit"
-    authors: Xueyao Zhang*, Liumeng Xue*, Yicheng Gu*, Yuancheng Wang*, Jiaqi Li*, Haorui He, Chaoren Wang, Songting Liu, Xi Chen, <strong>Junan Zhang</strong>, Zihao Fang, Haopeng Chen, Tze Ying Tang, Lexiao Zou, Mingxuan Wang, Jun Han, Kai Chen, Haizhou Li, Zhizheng Wu (*Equal Contribution)
+    authors: Xueyao Zhang*, Liumeng Xue*, Yicheng Gu*, Yuancheng Wang*, Jiaqi Li*, Haorui He, Chaoren Wang, Songting Liu, Xi Chen, <strong>Junan Zhang</strong>, Zihao Fang, Haopeng Chen, Tze Ying Tang, Lexiao Zou, Mingxuan Wang, Jun Han, Kai Chen, Haizhou Li, Zhizheng Wu
     conference_short: SLT
     conference: 2024 IEEE Spoken Language Technology Workshop (SLT), 2024.
     pdf: https://arxiv.org/abs/2312.09911
