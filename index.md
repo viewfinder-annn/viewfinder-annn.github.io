@@ -8,7 +8,7 @@ layout: homepage
 {% assign phd_start_year = site.data.info.phd_start_year %}
 {% assign year_diff = current_year | minus: phd_start_year %}
 
-{% if site.time.m >= 9 %}
+{% if site.time | date: '%m' >= 9 %}
   {% assign academic_year = year_diff | plus: 1 %}
 {% else %}
   {% assign academic_year = year_diff %}
@@ -43,8 +43,9 @@ Beyond academia, I'm an amateur music producer with over 2 million plays on [net
 
 {% include_relative _includes/publications.md %}
 
+{% include_relative _includes/talks.md %}
+
 {% include_relative _includes/education.md %}
 
-<!-- {% include_relative _includes/services.md %} -->
-
+{% include_relative _includes/services.md %}
 

@@ -1,5 +1,27 @@
 main:
 
+  - title: "AnyAccomp: Generalizable Accompaniment Generation via Quantized Melodic Bottleneck"
+    authors: <strong>Junan Zhang*</strong>, Yunjia Zhang*, Xueyao Zhang, Zhizheng Wu
+    conference_short: Preprint
+    conference: Arxiv Preprint, 2025.
+    pdf: https://arxiv.org/abs/2509.14052
+    page: https://anyaccomp.github.io
+    # code: https://github.com/MrGiovanni/ContinualLearning
+    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    image: ./assets/img/anyaccomp.png
+    # notes: Accepted
+
+  - title: "Multi-Metric Preference Alignment for Generative Speech Restoration"
+    authors: <strong>Junan Zhang</strong>, Xueyao Zhang, Jing Yang, Yuancheng Wang, Fan Fan, Zhizheng Wu
+    conference_short: Preprint
+    conference: Arxiv Preprint, 2025.
+    pdf: https://arxiv.org/abs/2508.17229
+    page: https://gensr-pref.github.io
+    # code: https://github.com/MrGiovanni/ContinualLearning
+    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    image: ./assets/img/gensr-pref.png
+    # notes: Accepted
+
   - title: "AnyEnhance: A Unified Generative Model with Prompt-Guidance and Self-Critic for Voice Enhancement"
     authors: <strong>Junan Zhang</strong>, Jing Yang, Zihao Fang, Yuancheng Wang, Zehua Zhang, Zhuo Wang, Fan Fan, Zhizheng Wu
     conference_short: TASLP
@@ -24,15 +46,15 @@ main:
 
   - title: "Metis: A Foundation Speech Generation Model with Masked Generative Pre-training"
     authors: Yuancheng Wang, Jiachen Zheng, <strong>Junan Zhang</strong>, Xueyao Zhang, Huan Liao, Zhizheng Wu
-    conference_short: Preprint
-    conference: Arxiv Preprint, 2025.
+    conference_short: NeurIPS
+    conference: The Thirty-Ninth Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.
     pdf: https://arxiv.org/abs/2502.03128
     page: https://metis-demo.github.io
     code: https://github.com/open-mmlab/Amphion/tree/main/models/tts/metis
     # code: https://github.com/open-mmlab/Amphion/tree/main/egs/svc/MultipleContentsSVC
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/metis.png
-    # notes: Accepted
+    notes: Accepted
 
   # - title: "Overview of the Amphion Toolkit (v0.2)"
   #   authors: Jiaqi Li*, Xueyao Zhang*, Yuancheng Wang*, Haorui He*, Chaoren Wang*, Li Wang*, Huan Liao*, Junyi Ao*, Zeyu Xie*, Yiqiao Huang*, <strong>Junan Zhang*</strong>, Zhizheng Wu
