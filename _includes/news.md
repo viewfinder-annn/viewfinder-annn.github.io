@@ -1,5 +1,6 @@
 ## News {#news}
 
+- **[Oct. 2025]** honored to receive the <span style="color:#e74d3c">Best Presentation Award</span> at [NCMMSC 2025](https://www.ncmmsc.org.cn/xslt/)!
 - **[Sep. 2025]** 2 papers accepted to NeurIPS 2025: [Metis](https://arxiv.org/abs/2502.03128) and [TaDiCodec](https://arxiv.org/abs/2508.16790)!
 - **[Aug. 2025]** honored to have led the [CCF AATC Track 1: Speech Restoration Challenge](https://ccf-aatc.org.cn), drawing 100+ teams to tackle real-world audio challenges!
 - **[Jun. 2025]** thrilled to share that our paper [AnyEnhance](https://arxiv.org/abs/2501.15417), my first as lead author in the speech/audio domain, has been accepted to TASLP 2025!

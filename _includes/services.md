@@ -15,7 +15,7 @@
 </ul>
 
 <ul style="margin:0 0 5px;">
-  <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6570655">
+  <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10723155">
   IEEE Transactions on Audio, Speech, and Language Processing</a></li>
 </ul>
 
