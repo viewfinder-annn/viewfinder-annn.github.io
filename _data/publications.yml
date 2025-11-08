@@ -6,15 +6,15 @@ main:
     conference: Arxiv Preprint, 2025.
     pdf: https://arxiv.org/abs/2509.14052
     page: https://anyaccomp.github.io
-    # code: https://github.com/MrGiovanni/ContinualLearning
+    code: https://github.com/AmphionTeam/AnyAccomp
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/anyaccomp.png
     # notes: Accepted
 
   - title: "Multi-Metric Preference Alignment for Generative Speech Restoration"
     authors: <strong>Junan Zhang</strong>, Xueyao Zhang, Jing Yang, Yuancheng Wang, Fan Fan, Zhizheng Wu
-    conference_short: Preprint
-    conference: Arxiv Preprint, 2025.
+    conference_short: AAAI
+    conference: The 40th Annual AAAI Conference on Artificial Intelligence (AAAI), 2026.
     pdf: https://arxiv.org/abs/2508.17229
     page: https://gensr-pref.github.io
     # code: https://github.com/MrGiovanni/ContinualLearning
@@ -28,21 +28,21 @@ main:
     conference: IEEE Transactions on Audio, Speech and Language Processing (TASLP), 2025.
     pdf: https://arxiv.org/abs/2501.15417
     page: https://amphionspace.github.io/anyenhance
-    # code: https://github.com/MrGiovanni/ContinualLearning
+    code: https://github.com/viewfinder-annn/AnyEnhance-v1
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/anyenhance.png
-    notes: Accepted
+    # notes: Accepted
 
   - title: "LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models"
     authors: Junyan Ye*, Baichuan Zhou*, Zilong Huang*, <strong>Junan Zhang*</strong>, Tianyi Bai*, Hengrui Kang, Jun He, Honglin Lin, Zihao Wang, Tong Wu, Zhizheng Wu, Yiping Chen, Dahua Lin, Conghui He, Weijia Li
     conference_short: ICLR
-    conference: The Thirteenth International Conference on Learning Representations (ICLR), 2025.
+    conference: The Thirteenth International Conference on Learning Representations (ICLR), 2025. [spotlight (top 3%)]
     pdf: https://arxiv.org/abs/2410.09732
     page: https://opendatalab.github.io/LOKI
     code: https://github.com/opendatalab/LOKI
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/loki.jpeg
-    notes: Accepted (Spotlight)
+    # notes: Accepted (Spotlight)
 
   - title: "Metis: A Foundation Speech Generation Model with Masked Generative Pre-training"
     authors: Yuancheng Wang, Jiachen Zheng, <strong>Junan Zhang</strong>, Xueyao Zhang, Huan Liao, Zhizheng Wu
@@ -54,7 +54,7 @@ main:
     # code: https://github.com/open-mmlab/Amphion/tree/main/egs/svc/MultipleContentsSVC
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/metis.png
-    notes: Accepted
+    # notes: Accepted
 
   # - title: "Overview of the Amphion Toolkit (v0.2)"
   #   authors: Jiaqi Li*, Xueyao Zhang*, Yuancheng Wang*, Haorui He*, Chaoren Wang*, Li Wang*, Huan Liao*, Junyi Ao*, Zeyu Xie*, Yiqiao Huang*, <strong>Junan Zhang*</strong>, Zhizheng Wu
@@ -85,7 +85,7 @@ main:
     code: https://github.com/open-mmlab/Amphion
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/amphion.png
-    notes: Accepted (GitHub 9k+ stars!)
+    # notes: Accepted (GitHub 9k+ stars!)
 
   - title: "Killing two birds with one stone: Malicious package detection in NPM and PyPI using a single model of malicious behavior sequence"
     authors: <strong>Junan Zhang</strong>, Kaifeng Huang, Yiheng Huang, Bihuan Chen, Ruisi Wang, Chong Wang, Xin Peng
