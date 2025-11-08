@@ -4,12 +4,20 @@
     </p>
 </div>
 
+{% assign publication_categories = "Audio Enhancement,Music Generation,Misc" | split: "," %}
+{% assign category_keys = "audio_enhancement,music_generation,misc" | split: "," %}
+
+{% for category_name in publication_categories %}
+{% assign category_key = category_keys[forloop.index0] %}
+{% assign publications = site.data.publications[category_key] %}
+
+{% if publications %}
+<h3 style="margin-top: 0px; margin-bottom: 10px;">{{ category_name }}:</h3>
 <div class="publications">
-<ol class="bibliography">
+<ol class="bibliography" style="margin-top: 0;">
 
-{% for link in site.data.publications.main %}
-
-<li>
+{% for link in publications %}
+<li style="margin-bottom: 15px;">
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 5px;padding-left: 5px;">
     {% if link.image %} 
@@ -47,9 +55,9 @@
   </div>
 </div>
 </li>
-<br>
-
 {% endfor %}
 
 </ol>
 </div>
+{% endif %}
+{% endfor %}

@@ -1,27 +1,4 @@
-main:
-
-  - title: "AnyAccomp: Generalizable Accompaniment Generation via Quantized Melodic Bottleneck"
-    authors: <strong>Junan Zhang*</strong>, Yunjia Zhang*, Xueyao Zhang, Zhizheng Wu
-    conference_short: Preprint
-    conference: Arxiv Preprint, 2025.
-    pdf: https://arxiv.org/abs/2509.14052
-    page: https://anyaccomp.github.io
-    code: https://github.com/AmphionTeam/AnyAccomp
-    # bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/anyaccomp.png
-    # notes: Accepted
-
-  - title: "Multi-Metric Preference Alignment for Generative Speech Restoration"
-    authors: <strong>Junan Zhang</strong>, Xueyao Zhang, Jing Yang, Yuancheng Wang, Fan Fan, Zhizheng Wu
-    conference_short: AAAI
-    conference: The 40th Annual AAAI Conference on Artificial Intelligence (AAAI), 2026.
-    pdf: https://arxiv.org/abs/2508.17229
-    page: https://gensr-pref.github.io
-    # code: https://github.com/MrGiovanni/ContinualLearning
-    # bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/gensr-pref.png
-    # notes: Accepted
-
+audio_enhancement:
   - title: "AnyEnhance: A Unified Generative Model with Prompt-Guidance and Self-Critic for Voice Enhancement"
     authors: <strong>Junan Zhang</strong>, Jing Yang, Zihao Fang, Yuancheng Wang, Zehua Zhang, Zhuo Wang, Fan Fan, Zhizheng Wu
     conference_short: TASLP
@@ -29,10 +6,35 @@ main:
     pdf: https://arxiv.org/abs/2501.15417
     page: https://amphionspace.github.io/anyenhance
     code: https://github.com/viewfinder-annn/AnyEnhance-v1
-    # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/anyenhance.png
-    # notes: Accepted
 
+  - title: "Multi-Metric Preference Alignment for Generative Speech Restoration"
+    authors: <strong>Junan Zhang</strong>, Xueyao Zhang, Jing Yang, Yuancheng Wang, Fan Fan, Zhizheng Wu
+    conference_short: AAAI
+    conference: The 40th Annual AAAI Conference on Artificial Intelligence (AAAI), 2026.
+    pdf: https://arxiv.org/abs/2508.17229
+    page: https://gensr-pref.github.io
+    image: ./assets/img/gensr-pref.png
+
+music_generation:
+  - title: "AnyAccomp: Generalizable Accompaniment Generation via Quantized Melodic Bottleneck"
+    authors: <strong>Junan Zhang*</strong>, Yunjia Zhang*, Xueyao Zhang, Zhizheng Wu
+    conference_short: Preprint
+    conference: Arxiv Preprint, 2025.
+    pdf: https://arxiv.org/abs/2509.14052
+    page: https://anyaccomp.github.io
+    code: https://github.com/AmphionTeam/AnyAccomp
+    image: ./assets/img/anyaccomp.png
+
+  - title: "Vevo2: Bridging Controllable Speech and Singing Voice Generation via Unified Prosody Learning"
+    authors: Xueyao Zhang, <strong>Junan Zhang</strong>, Yuancheng Wang, Chaoren Wang, Yuanzhe Chen, Dongya Jia, Zhuo Chen, Zhizheng Wu
+    conference_short: Preprint
+    conference: Arxiv Preprint, 2025.
+    pdf: https://arxiv.org/abs/2508.16332
+    page: https://versasinger.github.io/
+    image: ./assets/img/vevo2.png
+
+misc:
   - title: "LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models"
     authors: Junyan Ye*, Baichuan Zhou*, Zilong Huang*, <strong>Junan Zhang*</strong>, Tianyi Bai*, Hengrui Kang, Jun He, Honglin Lin, Zihao Wang, Tong Wu, Zhizheng Wu, Yiping Chen, Dahua Lin, Conghui He, Weijia Li
     conference_short: ICLR
@@ -40,9 +42,7 @@ main:
     pdf: https://arxiv.org/abs/2410.09732
     page: https://opendatalab.github.io/LOKI
     code: https://github.com/opendatalab/LOKI
-    # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/loki.jpeg
-    # notes: Accepted (Spotlight)
 
   - title: "Metis: A Foundation Speech Generation Model with Masked Generative Pre-training"
     authors: Yuancheng Wang, Jiachen Zheng, <strong>Junan Zhang</strong>, Xueyao Zhang, Huan Liao, Zhizheng Wu
@@ -51,21 +51,35 @@ main:
     pdf: https://arxiv.org/abs/2502.03128
     page: https://metis-demo.github.io
     code: https://github.com/open-mmlab/Amphion/tree/main/models/tts/metis
+    image: ./assets/img/metis.png
+
+  - title: "Amphion: an Open-Source Audio, Music, and Speech Generation Toolkit"
+    authors: Xueyao Zhang*, Liumeng Xue*, Yicheng Gu*, Yuancheng Wang*, Jiaqi Li*, Haorui He, Chaoren Wang, Songting Liu, Xi Chen, <strong>Junan Zhang</strong>, Zihao Fang, Haopeng Chen, Tze Ying Tang, Lexiao Zou, Mingxuan Wang, Jun Han, Kai Chen, Haizhou Li, Zhizheng Wu
+    conference_short: SLT
+    conference: 2024 IEEE Spoken Language Technology Workshop (SLT), 2024.
+    pdf: https://arxiv.org/abs/2312.09911
+    code: https://github.com/open-mmlab/Amphion
+    image: ./assets/img/amphion.png
+
+  - title: "Killing two birds with one stone: Malicious package detection in NPM and PyPI using a single model of malicious behavior sequence"
+    authors: <strong>Junan Zhang</strong>, Kaifeng Huang, Yiheng Huang, Bihuan Chen, Ruisi Wang, Chong Wang, Xin Peng
+    conference_short: TOSEM
+    conference: ACM Transactions on Software Engineering and Methodology (TOSEM), 2025.
+    pdf: https://dl.acm.org/doi/full/10.1145/3705304
+    image: ./assets/img/cerebro.png
+    notes: my first academic paper :3
+
+deprecated:
+  - title: "Overview of the Amphion Toolkit (v0.2)"
+    authors: Jiaqi Li*, Xueyao Zhang*, Yuancheng Wang*, Haorui He*, Chaoren Wang*, Li Wang*, Huan Liao*, Junyi Ao*, Zeyu Xie*, Yiqiao Huang*, <strong>Junan Zhang*</strong>, Zhizheng Wu
+    conference_short: Preprint
+    conference: Arxiv Preprint, 2025.
+    pdf: https://arxiv.org/abs/2501.15442
+    code: https://github.com/open-mmlab/Amphion
     # code: https://github.com/open-mmlab/Amphion/tree/main/egs/svc/MultipleContentsSVC
     # bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/metis.png
+    image: ./assets/img/amphion.png
     # notes: Accepted
-
-  # - title: "Overview of the Amphion Toolkit (v0.2)"
-  #   authors: Jiaqi Li*, Xueyao Zhang*, Yuancheng Wang*, Haorui He*, Chaoren Wang*, Li Wang*, Huan Liao*, Junyi Ao*, Zeyu Xie*, Yiqiao Huang*, <strong>Junan Zhang*</strong>, Zhizheng Wu
-  #   conference_short: Preprint
-  #   conference: Arxiv Preprint, 2025.
-  #   pdf: https://arxiv.org/abs/2501.15442
-  #   code: https://github.com/open-mmlab/Amphion
-  #   # code: https://github.com/open-mmlab/Amphion/tree/main/egs/svc/MultipleContentsSVC
-  #   # bibtex: https://bib.yliu.me/MICCAI23.txt
-  #   image: ./assets/img/amphion.png
-  #   # notes: Accepted
 
   - title: "SingNet: Towards a Large-Scale, Diverse, and In-the-Wild Singing Voice Dataset"
     authors: Yicheng Gu*, Chaoren Wang*, <strong>Junan Zhang*</strong>, Xueyao Zhang, Zihao Fang, Haorui He, Zhizheng Wu
@@ -77,42 +91,12 @@ main:
     image: ./assets/img/singnet.png
     # notes: Accepted
 
-  - title: "Amphion: an Open-Source Audio, Music, and Speech Generation Toolkit"
-    authors: Xueyao Zhang*, Liumeng Xue*, Yicheng Gu*, Yuancheng Wang*, Jiaqi Li*, Haorui He, Chaoren Wang, Songting Liu, Xi Chen, <strong>Junan Zhang</strong>, Zihao Fang, Haopeng Chen, Tze Ying Tang, Lexiao Zou, Mingxuan Wang, Jun Han, Kai Chen, Haizhou Li, Zhizheng Wu
+  - title: "Leveraging diverse semantic-based audio pretrained models for singing voice conversion"
+    authors: Xueyao Zhang, Zihao Fang, Yicheng Gu, Haopeng Chen, Lexiao Zou, <strong>Junan Zhang</strong>, Liumeng Xue, Zhizheng Wu
     conference_short: SLT
     conference: 2024 IEEE Spoken Language Technology Workshop (SLT), 2024.
-    pdf: https://arxiv.org/abs/2312.09911
-    code: https://github.com/open-mmlab/Amphion
+    pdf: https://arxiv.org/abs/2310.11160
+    code: https://github.com/open-mmlab/Amphion/tree/main/egs/svc/MultipleContentsSVC
     # bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/amphion.png
-    # notes: Accepted (GitHub 9k+ stars!)
-
-  - title: "Killing two birds with one stone: Malicious package detection in NPM and PyPI using a single model of malicious behavior sequence"
-    authors: <strong>Junan Zhang</strong>, Kaifeng Huang, Yiheng Huang, Bihuan Chen, Ruisi Wang, Chong Wang, Xin Peng
-    conference_short: TOSEM
-    conference: ACM Transactions on Software Engineering and Methodology (TOSEM), 2025.
-    pdf: https://dl.acm.org/doi/full/10.1145/3705304
-    # bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/cerebro.png
-    notes: my first academic paper :3
-
-  # - title: "Leveraging diverse semantic-based audio pretrained models for singing voice conversion"
-  #   authors: Xueyao Zhang, Zihao Fang, Yicheng Gu, Haopeng Chen, Lexiao Zou, <strong>Junan Zhang</strong>, Liumeng Xue, Zhizheng Wu
-  #   conference_short: SLT
-  #   conference: 2024 IEEE Spoken Language Technology Workshop (SLT), 2024.
-  #   pdf: https://arxiv.org/abs/2310.11160
-  #   code: https://github.com/open-mmlab/Amphion/tree/main/egs/svc/MultipleContentsSVC
-  #   # bibtex: https://bib.yliu.me/MICCAI23.txt
-  #   image: ./assets/img/multiplecontentsvc.png
-  #   notes: Accepted
-
-  # - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
-  #   authors: <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
-  #   conference_short: CVPR
-  #   conference: IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2020.
-  #   pdf: https://arxiv.org/pdf/2002.10211.pdf
-  #   code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
-  #   page: https://class-il.mpi-inf.mpg.de/mnemonics/
-  #   bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
-  #   notes: Oral Presentation
-  #   image: ./assets/img/teaser_example.png
+    image: ./assets/img/multiplecontentsvc.png
+    notes: Accepted
