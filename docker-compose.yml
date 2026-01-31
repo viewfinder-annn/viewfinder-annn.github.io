@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  jekyll:
+    image: jekyll/jekyll:4.2.2
+    container_name: jekyll-server
+    # 这里的 command 对应你之前指令最后的 /bin/sh 部分
+    command: >
+      /bin/sh -c "bundle install && 
+      bundle exec jekyll serve --watch --force_polling --host 0.0.0.0"
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+    environment:
+      # - http_proxy=http://host.docker.internal:7890
+      # - https_proxy=http://host.docker.internal:7890
+      - JEKYLL_ENV=development

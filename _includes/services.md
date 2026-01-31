@@ -1,5 +1,11 @@
 ## Services {#services}
 
+<h4 style="margin:0 10px 0;">Challenge Organizers</h4>
+
+<ul style="margin:0 0 5px;">
+  <li><a href="https://arxiv.org/abs/2509.12974">CCF AATC Track 1: Speech Restoration Challenge</a></li>
+</ul>
+
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">

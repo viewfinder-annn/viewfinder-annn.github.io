@@ -5,10 +5,11 @@ layout: homepage
 ## About Me {#about-me}
 
 {% assign current_year = site.time | date: '%Y' | plus: 0 %}
-{% assign phd_start_year = site.data.info.phd_start_year %}
+{% assign current_month = site.time | date: '%m' | plus: 0 %}
+{% assign phd_start_year = site.data.info.phd_start_year | plus: 0 %}
 {% assign year_diff = current_year | minus: phd_start_year %}
 
-{% if site.time | date: '%m' >= 9 %}
+{% if current_month >= 9 %}
   {% assign academic_year = year_diff | plus: 1 %}
 {% else %}
   {% assign academic_year = year_diff %}
@@ -35,11 +36,11 @@ Beyond academia, I'm an amateur music producer with over 2 million plays on [net
 
 ## Research Interests {#research-interests}
 
-- **Audio Enhancement:** speech/singing voice enhancement (de-noise, de-reverb, super-resolution, etc.), music restoration
-- **Music Generation:** singing voice generation/conversion, accompaniment generation, controllable music generation
+**<u>High-Quality</u>** and **<u>Controllable</u>** Music Generation:
+- **High-Quality:** speech/singing voice enhancement (de-noise, de-reverb, super-resolution, etc.), music restoration.
+- **Controllable:** singing voice generation/conversion, accompaniment generation, music-to-music generation.
 
-
-{% include_relative _includes/news.md %}
+<!-- {% include_relative _includes/news.md %} -->
 
 {% include_relative _includes/publications.md %}
 

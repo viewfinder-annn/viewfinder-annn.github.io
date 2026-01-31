@@ -19,8 +19,8 @@ audio_enhancement:
 music_generation:
   - title: "AnyAccomp: Generalizable Accompaniment Generation via Quantized Melodic Bottleneck"
     authors: <strong>Junan Zhang*</strong>, Yunjia Zhang*, Xueyao Zhang, Zhizheng Wu
-    conference_short: Preprint
-    conference: Arxiv Preprint, 2025.
+    conference_short: ICASSP
+    conference: IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026.
     pdf: https://arxiv.org/abs/2509.14052
     page: https://anyaccomp.github.io
     code: https://github.com/AmphionTeam/AnyAccomp
@@ -43,15 +43,6 @@ misc:
     page: https://opendatalab.github.io/LOKI
     code: https://github.com/opendatalab/LOKI
     image: ./assets/img/loki.jpeg
-
-  - title: "Metis: A Foundation Speech Generation Model with Masked Generative Pre-training"
-    authors: Yuancheng Wang, Jiachen Zheng, <strong>Junan Zhang</strong>, Xueyao Zhang, Huan Liao, Zhizheng Wu
-    conference_short: NeurIPS
-    conference: The Thirty-Ninth Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.
-    pdf: https://arxiv.org/abs/2502.03128
-    page: https://metis-demo.github.io
-    code: https://github.com/open-mmlab/Amphion/tree/main/models/tts/metis
-    image: ./assets/img/metis.png
 
   - title: "Amphion: an Open-Source Audio, Music, and Speech Generation Toolkit"
     authors: Xueyao Zhang*, Liumeng Xue*, Yicheng Gu*, Yuancheng Wang*, Jiaqi Li*, Haorui He, Chaoren Wang, Songting Liu, Xi Chen, <strong>Junan Zhang</strong>, Zihao Fang, Haopeng Chen, Tze Ying Tang, Lexiao Zou, Mingxuan Wang, Jun Han, Kai Chen, Haizhou Li, Zhizheng Wu
@@ -100,3 +91,12 @@ deprecated:
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/multiplecontentsvc.png
     notes: Accepted
+  
+  - title: "Metis: A Foundation Speech Generation Model with Masked Generative Pre-training"
+    authors: Yuancheng Wang, Jiachen Zheng, <strong>Junan Zhang</strong>, Xueyao Zhang, Huan Liao, Zhizheng Wu
+    conference_short: NeurIPS
+    conference: The Thirty-Ninth Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.
+    pdf: https://arxiv.org/abs/2502.03128
+    page: https://metis-demo.github.io
+    code: https://github.com/open-mmlab/Amphion/tree/main/models/tts/metis
+    image: ./assets/img/metis.png
