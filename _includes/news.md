@@ -1,5 +1,6 @@
 ## News {#news}
 
+- **[Mar. 2026]** our paper [Vevo2](https://arxiv.org/abs/2508.16332) is accepted to TASLP 2026!
 - **[Jan. 2026]** our paper [AnyAccomp](https://arxiv.org/abs/2509.14052) is accepted to ICASSP 2026!
 - **[Nov. 2025]** [GenSR-Pref](https://arxiv.org/abs/2508.17229) is accepted to AAAI 2026! (my first first-author cs conference paper after 3.5 years of research experience)
 - **[Oct. 2025]** honored to receive the <span style="color:#e74d3c">Best Presentation Award</span> at [NCMMSC 2025](https://www.ncmmsc.org.cn/xslt/)!

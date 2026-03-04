@@ -3,21 +3,19 @@
 <h4 style="margin:0 10px 0;">Challenge Organizers</h4>
 
 <ul style="margin:0 0 5px;">
-  <li><a href="https://arxiv.org/abs/2509.12974">CCF AATC Track 1: Speech Restoration Challenge</a></li>
+<a href="https://arxiv.org/abs/2509.12974">CCF AATC Track 1: Speech Restoration Challenge</a>
 </ul>
 
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
-  <li><a href="https://2026.ieeeicassp.org/">IEEE ICASSP 2026</a></li>
-  <li><a href="https://m-a-p.ai/LLM4Music/">LLM4Music @ ISMIR 2025</a></li>
+<a href="https://interspeech2026.org/">Interspeech 2026</a>, <a href="https://2026.ieeeicassp.org/">IEEE ICASSP 2026</a>, <a href="https://m-a-p.ai/LLM4Music/">LLM4Music @ ISMIR 2025</a>
 </ul>
 
 <h4 style="margin:0 10px 0;">Journal Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
-  <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10723155">IEEE Transactions on Audio, Speech, and Language Processing</a></li>
-  <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=97">IEEE Signal Processing Letters</a></li>
+<a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10723155">IEEE TASLP</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=97">IEEE SPL</a>
 </ul>
 
 

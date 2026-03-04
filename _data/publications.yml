@@ -28,22 +28,13 @@ music_generation:
 
   - title: "Vevo2: Bridging Controllable Speech and Singing Voice Generation via Unified Prosody Learning"
     authors: Xueyao Zhang, <strong>Junan Zhang</strong>, Yuancheng Wang, Chaoren Wang, Yuanzhe Chen, Dongya Jia, Zhuo Chen, Zhizheng Wu
-    conference_short: Preprint
-    conference: Arxiv Preprint, 2025.
+    conference_short: TASLP
+    conference: IEEE Transactions on Audio, Speech and Language Processing (TASLP), 2026.
     pdf: https://arxiv.org/abs/2508.16332
     page: https://versasinger.github.io/
     image: ./assets/img/vevo2.png
 
 misc:
-  - title: "LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models"
-    authors: Junyan Ye*, Baichuan Zhou*, Zilong Huang*, <strong>Junan Zhang*</strong>, Tianyi Bai*, Hengrui Kang, Jun He, Honglin Lin, Zihao Wang, Tong Wu, Zhizheng Wu, Yiping Chen, Dahua Lin, Conghui He, Weijia Li
-    conference_short: ICLR
-    conference: The Thirteenth International Conference on Learning Representations (ICLR), 2025. [spotlight (top 3%)]
-    pdf: https://arxiv.org/abs/2410.09732
-    page: https://opendatalab.github.io/LOKI
-    code: https://github.com/opendatalab/LOKI
-    image: ./assets/img/loki.jpeg
-
   - title: "Amphion: an Open-Source Audio, Music, and Speech Generation Toolkit"
     authors: Xueyao Zhang*, Liumeng Xue*, Yicheng Gu*, Yuancheng Wang*, Jiaqi Li*, Haorui He, Chaoren Wang, Songting Liu, Xi Chen, <strong>Junan Zhang</strong>, Zihao Fang, Haopeng Chen, Tze Ying Tang, Lexiao Zou, Mingxuan Wang, Jun Han, Kai Chen, Haizhou Li, Zhizheng Wu
     conference_short: SLT
@@ -61,6 +52,15 @@ misc:
     notes: my first academic paper :3
 
 deprecated:
+  - title: "LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models"
+    authors: Junyan Ye*, Baichuan Zhou*, Zilong Huang*, <strong>Junan Zhang*</strong>, Tianyi Bai*, Hengrui Kang, Jun He, Honglin Lin, Zihao Wang, Tong Wu, Zhizheng Wu, Yiping Chen, Dahua Lin, Conghui He, Weijia Li
+    conference_short: ICLR
+    conference: The Thirteenth International Conference on Learning Representations (ICLR), 2025. [spotlight (top 3%)]
+    pdf: https://arxiv.org/abs/2410.09732
+    page: https://opendatalab.github.io/LOKI
+    code: https://github.com/opendatalab/LOKI
+    image: ./assets/img/loki.jpeg
+
   - title: "Overview of the Amphion Toolkit (v0.2)"
     authors: Jiaqi Li*, Xueyao Zhang*, Yuancheng Wang*, Haorui He*, Chaoren Wang*, Li Wang*, Huan Liao*, Junyi Ao*, Zeyu Xie*, Yiqiao Huang*, <strong>Junan Zhang*</strong>, Zhizheng Wu
     conference_short: Preprint

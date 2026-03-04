@@ -12,9 +12,10 @@
 {% assign publications = site.data.publications[category_key] %}
 
 {% if publications %}
-<h3 style="margin-top: 0px; margin-bottom: 10px;">{{ category_name }}:</h3>
-<div class="publications">
-<ol class="bibliography" style="margin-top: 0;">
+<hr style="margin: 0.75rem 0;">
+<h3 style="margin-top: 8px; margin-bottom: 4px;">{{ category_name }}:</h3>
+<div class="publications" style="margin-bottom: 4px;">
+<ol class="bibliography" style="margin-top: 0; margin-bottom: 0;">
 
 {% for link in publications %}
 <li style="margin-bottom: 15px;">
