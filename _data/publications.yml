@@ -34,6 +34,14 @@ music_generation:
     page: https://versasinger.github.io/
     image: ./assets/img/vevo2.png
 
+  - title: "MusicKV: Training-Free Music Editing via Vital Layer Selection and Time-Varying Key-Value Injection"
+    authors: Zhaocheng Lin, <strong>Junan Zhang</strong>, Zhizheng Wu, Liusha Yang
+    conference_short: ICME
+    conference: IEEE International Conference on Multimedia & Expo (ICME), 2026.
+    # pdf: https://arxiv.org/abs/2508.16332
+    # page: https://versasinger.github.io/
+    image: ./assets/img/musickv.png
+
 misc:
   - title: "Amphion: an Open-Source Audio, Music, and Speech Generation Toolkit"
     authors: Xueyao Zhang*, Liumeng Xue*, Yicheng Gu*, Yuancheng Wang*, Jiaqi Li*, Haorui He, Chaoren Wang, Songting Liu, Xi Chen, <strong>Junan Zhang</strong>, Zihao Fang, Haopeng Chen, Tze Ying Tang, Lexiao Zou, Mingxuan Wang, Jun Han, Kai Chen, Haizhou Li, Zhizheng Wu
