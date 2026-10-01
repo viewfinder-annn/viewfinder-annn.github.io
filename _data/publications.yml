@@ -8,6 +8,12 @@ audio_enhancement:
     code: https://github.com/viewfinder-annn/AnyEnhance-v1
     image: ./assets/img/anyenhance.png
 
+  - title: "AnyEnhance2: Controlling Generative Freedom for Faithful and Universal Audio Restoration"
+    authors: <strong>Junan Zhang</strong>, Chong Jing, Jing Yang, Yingda Shen, Yuancheng Wang, Fan Fan, Zhizheng Wu
+    conference_short: Report
+    conference: Technical Report, 2026.
+    image: ./assets/img/anyenhance2.png
+
   - title: "Multi-Metric Preference Alignment for Generative Speech Restoration"
     authors: <strong>Junan Zhang</strong>, Xueyao Zhang, Jing Yang, Yuancheng Wang, Fan Fan, Zhizheng Wu
     conference_short: AAAI
@@ -25,6 +31,13 @@ music_generation:
     page: https://anyaccomp.github.io
     code: https://github.com/AmphionTeam/AnyAccomp
     image: ./assets/img/anyaccomp.png
+
+  - title: "AnyEdit: A Unified Framework for Speech and Singing Voice Editing with Real-World Environmental Consistency"
+    authors: Yunjia Zhang*, <strong>Junan Zhang*</strong>, Jing Yang*, Xueyao Zhang, Fan Fan, Zhizheng Wu
+    conference_short: NeurIPS
+    conference: Annual Conference on Neural Information Processing Systems (NeurIPS), 2026.
+    page: https://any-edit.github.io/
+    image: ./assets/img/anyedit.png
 
   - title: "Vevo2: Bridging Controllable Speech and Singing Voice Generation via Unified Prosody Learning"
     authors: Xueyao Zhang, <strong>Junan Zhang</strong>, Yuancheng Wang, Chaoren Wang, Yuanzhe Chen, Dongya Jia, Zhuo Chen, Zhizheng Wu

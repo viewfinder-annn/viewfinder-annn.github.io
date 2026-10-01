@@ -33,6 +33,11 @@
     <link rel="stylesheet" href="./assets/css/style-no-dark-mode.css">
     <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
     {% endif %}
+    <style>
+      a.tihu-link { position: relative; border-bottom: 1px dashed currentColor; text-decoration: none; }
+      a.tihu-link img { display: none; position: absolute; left: 0; bottom: 1.4em; width: 360px; height: auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,.25); z-index: 20; }
+      a.tihu-link:hover img { display: block; }
+    </style>
 
   </head>
   <body>
@@ -90,15 +95,6 @@
         </a>
         {% endif %}
         </div>
-        <br>
-
-        <nav style="margin-top: 0.5em; text-align: center;">
-          <a href="#about-me" style="text-decoration: none; color: inherit; display: block; margin-bottom: 0.5em;">About Me</a>
-          <!-- <a href="#news" style="text-decoration: none; color: inherit; display: block; margin-bottom: 0.5em;">News</a> -->
-          <a href="#publications" style="text-decoration: none; color: inherit; display: block; margin-bottom: 0.5em;">Publications</a>
-          <a href="#talks" style="text-decoration: none; color: inherit; display: block; margin-bottom: 0.5em;">Talks</a>
-          <a href="#education" style="text-decoration: none; color: inherit; display: block; margin-bottom: 0.5em;">Education</a>
-        </nav>
 
       </header>
       <section>
