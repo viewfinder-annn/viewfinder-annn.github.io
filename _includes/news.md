@@ -1,6 +1,7 @@
 ## News {#news}
 
-- **[Sep. 2026]** 1 paper accepted to NeurIPS 2026: [AnyEdit])!
+- **[Oct. 2026]** honored that our paper [DDSynth-RL](https://arxiv.org/abs/2608.03032) was selected as a <span style="color:#e74d3c">Best Paper Award Nominee</span> at ISMIR 2026!
+- **[Sep. 2026]** 1 paper accepted to NeurIPS 2026: [AnyEdit](https://arxiv.org/abs/2610.15665)!
 - **[Aug. 2026]** 1 paper accepted to ISMIR 2026: [DDSynth-RL](https://arxiv.org/abs/2608.03032)!
 - **[Mar. 2026]** 2 papers accepted to ICME 2026: [MusicKV]() and [FMPP]()!
 - **[Mar. 2026]** our paper [Vevo2](https://arxiv.org/abs/2508.16332) is accepted to TASLP 2026!
