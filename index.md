@@ -5,7 +5,7 @@ layout: homepage
 ## About Me {#about-me}
 
 <div class="job-notice">
-  <strong>I am actively seeking full-time industry positions starting in 2027 & 2028, focusing on Music &amp; Audio Generation, Multimodal Generation, and Multimodal LLM.<br>
+  <strong>I am actively seeking full-time industry positions starting in 2027, focusing on Music &amp; Audio Generation, Multimodal Generation, and Multimodal LLM.<br>
   Here are my <a href="./assets/files/cv_junanzhang.pdf" target="_blank" rel="noopener">CV</a> and <a href="./assets/files/cv_junanzhang_zh.pdf" target="_blank" rel="noopener">中文简历</a> — if you are interested, please feel free to <a href="mailto:junanzhang@link.cuhk.edu.cn">drop me an email</a>!
 </div>
 
