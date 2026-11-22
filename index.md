@@ -4,6 +4,11 @@ layout: homepage
 
 ## About Me {#about-me}
 
+<div class="job-notice">
+  <strong>I am actively seeking full-time industry positions starting in 2027 & 2028, focusing on Music &amp; Audio Generation, Multimodal Generation, and Multimodal LLM.<br>
+  Here are my <a href="./assets/files/cv_junanzhang.pdf" target="_blank" rel="noopener">CV</a> and <a href="./assets/files/cv_junanzhang_zh.pdf" target="_blank" rel="noopener">中文简历</a> — if you are interested, please feel free to <a href="mailto:junanzhang@link.cuhk.edu.cn">drop me an email</a>!
+</div>
+
 Hi :D ! I'm a <span id="phd-year">...</span> Ph.D. student at The Chinese University of Hong Kong, Shenzhen, advised by [Prof. Zhizheng Wu](https://drwuz.com/). I spent my undergraduate studies at Fudan University, majoring in software enginnering, with [Prof. Bihuan Chen](https://chenbihuan.github.io/) and [Prof. Kaifeng Huang](https://kaifeng-h.github.io/).
 
 Beyond academia, I'm an amateur music producer with over 2 million plays on [netease cloud music](https://music.163.com/#/artist/album?id=12030266). In my free time, I enjoy playing rhythm games like [osu!](https://osu.ppy.sh) and watching slice-of-life (iyashikei) anime like [miss kobayashi's dragon maid](https://maidragon.jp/) (i like [elma](https://maid-dragon.fandom.com/wiki/Elma) very much).

@@ -37,6 +37,38 @@
       a.tihu-link { position: relative; border-bottom: 1px dashed currentColor; text-decoration: none; }
       a.tihu-link img { display: none; position: absolute; left: 0; bottom: 1.4em; width: 360px; height: auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,.25); z-index: 20; }
       a.tihu-link:hover img { display: block; }
+      .social-icons a.cv-zh-icon { position: relative; }
+      .social-icons a.cv-zh-icon .cv-lang-badge {
+        position: absolute;
+        right: 1px;
+        bottom: 5px;
+        font-size: 0.56rem;
+        font-weight: 700;
+        line-height: 1;
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .job-notice {
+        margin: 0 0 18px;
+        padding: 10px 14px;
+        border-left: 3px solid #e74d3c;
+        background-color: rgba(231, 77, 60, 0.06);
+        border-radius: 0 6px 6px 0;
+        line-height: 1.55;
+      }
+      .job-notice a { white-space: nowrap; }
+      .job-notice .job-accent {
+        color: #e74d3c;
+        font-weight: 600;
+      }
+      @media (prefers-color-scheme: dark) {
+        .job-notice {
+          border-left-color: #ff6b5b;
+          background-color: rgba(255, 107, 91, 0.10);
+        }
+        .job-notice .job-accent {
+          color: #ff6b5b;
+        }
+      }
     </style>
 
   </head>
@@ -72,8 +104,14 @@
         {% endif %}
 
         {% if site.cv_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
+        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}" title="CV (English)" target="_blank" rel="noopener">
           <i class="ai ai-cv" style="font-size:1.3rem;"></i>
+        </a>
+        {% endif %}
+
+        {% if site.cv_zh_link %}
+        <a class="cv-zh-icon" style="margin: 0 5px 0 0" href="{{ site.cv_zh_link }}" title="中文简历 (CV in Chinese)" target="_blank" rel="noopener">
+          <i class="ai ai-cv" style="font-size:1.3rem;"></i><span class="cv-lang-badge">中</span>
         </a>
         {% endif %}
 
